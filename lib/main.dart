@@ -113,24 +113,36 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black, width: 2.0),
                   ),
-                  child: Container(
-                    // 아이콘 테두리용
-                    width: 24.0,
-                    height: 24.0,
-                    margin: EdgeInsets.all(8.0),
-                    padding: EdgeInsets.all(0.0),
-                    child: IconButton(
-                        padding: EdgeInsets.all(0.0),
-                        icon: Icon(Icons.edit, size: 14.0),
-                        color: Colors.black,
-                        onPressed: () {}),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 1.8),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(99.0),
-                      ),
-                    ),
-                  ),
+                  child: Column(
+                      //mainAxisAlignment: MainAxisAlignment.center, // 정렬
+                      children: <Widget>[
+                        Container(
+                          // 아이콘 테두리용
+                          width: 24.0,
+                          height: 24.0,
+                          margin: EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(0.0),
+                          child: IconButton(
+                              padding: EdgeInsets.all(0.0),
+                              icon: Icon(Icons.edit, size: 14.0),
+                              color: Colors.black,
+                              onPressed: () {}),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 1.8),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(99.0),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "- Doing Doing -",
+                            style:
+                                TextStyle(fontSize: 18.0, color: Colors.grey),
+                          ),
+                        ),
+                      ]),
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
