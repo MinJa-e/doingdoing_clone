@@ -291,6 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Container(
                           width: 180,
                           child: TextField(
+                            keyboardType: TextInputType.multiline,
                             maxLines: null,
                             textAlign: TextAlign.center,
                             decoration: InputDecoration(
