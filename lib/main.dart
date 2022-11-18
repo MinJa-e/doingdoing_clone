@@ -1,4 +1,5 @@
 import 'package:doingdoing_clone/screens/HomeScreen.dart';
+import 'package:doingdoing_clone/screens/WriteScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

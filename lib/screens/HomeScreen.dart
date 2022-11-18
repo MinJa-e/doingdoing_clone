@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:doingdoing_clone/screens/WriteScreen.dart';
 import 'package:doingdoing_clone/widget/LabelDate.dart';
 import 'package:doingdoing_clone/widget/MainMemo.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class _HomeState extends State<HomeScreen> {
         leading: SizedBox(
           child: TextButton.icon(
               onPressed: () {
-                // Respond to button press
+                Navigator.pop(context);
               },
               icon: Icon(Icons.navigate_before, size: 18),
               label: Text(
@@ -48,7 +50,12 @@ class _HomeState extends State<HomeScreen> {
             ),
           ),
           IconButton(
-              icon: Icon(Icons.add), color: Colors.black, onPressed: () {}),
+              icon: Icon(Icons.add), color: Colors.black, onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (BuildContext context) =>
+                  WriteScreen(),
+            ));
+          }),
         ],
       ),
       body: Center(
