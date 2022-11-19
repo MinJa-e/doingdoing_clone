@@ -1,12 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart';
 
 class Label extends StatefulWidget{
-  const Label({Key? key, /*required this.date*/}) : super(key: key);
-  /*final DateTime date;*/
+  const Label({Key? key, required this.text}) : super(key: key);
+  final String text;
 
   @override
   State<StatefulWidget> createState() {
@@ -23,10 +21,12 @@ class _LabelState extends State<Label> {
 
     return SizedBox(
       child: Container(
-        margin: EdgeInsets.only(top: 24.0),
+        //스크린 사이즈에 따라 상대 비율로 라벨 사이즈 조정 되게 변경
+        // > 지금은 글자 수 따라 변경되서 통일성x
+        margin: EdgeInsets.only(top: 16.0),
         padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 4.0),
         child: Container(
-          child: Text("날짜",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0)),
+          child: Text(widget.text,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0)),
           padding:
           EdgeInsets.symmetric(vertical: 6.0, horizontal: 24.0),
           decoration: BoxDecoration(

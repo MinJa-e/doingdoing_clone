@@ -42,8 +42,26 @@ class _WriteScreenState extends State<WriteScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             //crossAxisAlignment: CrossAxisAlignment.center,
-            children: [Label(), CheckListWhite()],
+            children: [
+              Label(
+                text: "날짜",
+              ),
+              CheckListWhite()
+            ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Label(
+                text: "할일",
+              ),
+              Container(margin: EdgeInsets.only(left: 20.0), width: 320)
+            ],
+          ),
+          Row(/*할일 input 만들어줄 곳*/),
+          Row(/*추가된 할 일 쌓이는 곳 * 할 일 간 순서이동도 만들어줘야 함*/),
+          Row(/*일기내용보이기 + 스위치 놔둘 곳*/),
         ],
       ),
     );
