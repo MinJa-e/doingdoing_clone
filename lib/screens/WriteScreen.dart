@@ -18,6 +18,7 @@ class WriteScreen extends StatefulWidget {
 }
 
 class _WriteScreenState extends State<WriteScreen> {
+  List _todos = [];
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +65,7 @@ class _WriteScreenState extends State<WriteScreen> {
               Container(margin: EdgeInsets.only(left: 20.0), width: 320)
             ],
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            TodoWrite(),
-            ToDoPlus(),
-          ]),
+          TodoWrite(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             //crossAxisAlignment: CrossAxisAlignment.center,
