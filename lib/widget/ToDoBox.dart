@@ -26,19 +26,45 @@ class _ToDoBoxState extends State<ToDoBox> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           color: Colors.white.withOpacity(0.5)),
-      child: ListView.builder(
-        // https://sunnybong.tistory.com/262
-        // 위 링크 보고 할일 추가 및 순서바꾸는 기능 만들기
-        
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        itemCount: _todosProvider.todos.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-              child:Text(_todosProvider.todos[index])
-          );
+      child: ReorderableListView(
+        buildDefaultDragHandles: false,
+        //자동으로 생기는 두 줄 아이콘 삭제
+        onReorder: (int oldIndex, int newIndex) {
+          setState(() {
+            if (newIndex > oldIndex) {
+              newIndex -= 1;
+            }
+            final moveTodo = _todosProvider.todos.removeAt(oldIndex);
+            _todosProvider.todos.insert(newIndex, moveTodo);
+          });
         },
+        children: _todosProvider.todos.map((todo) {
+          var index = _todosProvider.todos.indexOf(todo);
+          //화살표 함수를 사용하면 변수 추가 불가능한지 공부하기
+
+          return ListTile(
+            //map(배열 각 요소에게 부여할 명칭)
+            key: Key(todo),
+            //key가 있어야 각 인덱스로부터 요소 꺼내옴,
+            leading: Icon(Icons.highlight_off, color: Colors.black),
+            trailing: ReorderableDragStartListener(
+              index: index,
+              child: Icon(Icons.add),
+            ),
+            title: Text('$todo'),
+          );
+        }).toList(),
       ),
     );
   }
 }
+
+//Container(),IconButton(onPressed: () {  }, icon: null,)
+/*
+itemCount: _todosProvider.todos.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+              child:Text(_todosProvider.todos[index])
+          );
+        }
+* */

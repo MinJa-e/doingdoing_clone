@@ -74,7 +74,6 @@ class _WriteScreenState extends State<WriteScreen> {
             ],
           ),
           SwitchDiary(),
-
         ],
       ),
     );
