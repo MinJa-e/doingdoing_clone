@@ -3,11 +3,9 @@ import 'dart:html';
 import 'package:doingdoing_clone/widget/DateSelect.dart';
 import 'package:doingdoing_clone/widget/Label.dart';
 import 'package:doingdoing_clone/widget/ToDoBox.dart';
-import 'package:doingdoing_clone/widget/ToDoPlus.dart';
 import 'package:doingdoing_clone/widget/ToDoWrite.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/LabelDate.dart';
 import '../widget/SwitchDiary.dart';
 
 class WriteScreen extends StatefulWidget {

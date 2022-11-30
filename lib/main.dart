@@ -13,6 +13,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+            create: (BuildContext context) => TodosProvider())
+      ],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: new HomeScreen()),
+    );
+  }
+}
+
+/*
+@override
+  Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
@@ -24,8 +43,8 @@ class MyApp extends StatelessWidget {
           create: (BuildContext context) {
             return TodosProvider();
           },
-          child: WriteScreen(),
+          child: HomeScreen(),
         )
         );
   }
-}
+ */

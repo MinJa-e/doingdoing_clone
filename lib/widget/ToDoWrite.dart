@@ -43,6 +43,7 @@ class _TodoWriteState extends State<TodoWrite> {
           color: Colors.white,
           onPressed: () {
             _todosProvider.add(input);
+            _todosProvider.notifyListeners();
           }),
     ]);
   }
