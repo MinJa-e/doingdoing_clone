@@ -18,9 +18,9 @@ class _ToDoBoxState extends State<ToDoBox> {
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference testFire =
-        FirebaseFirestore.instance.collection('todos');
     _todosProvider = Provider.of<TodosProvider>(context);
+    CollectionReference testFire = FirebaseFirestore.instance.collection(
+        'todos');
 
     return Container(
         margin: EdgeInsets.only(top: 16.0),
@@ -30,7 +30,6 @@ class _ToDoBoxState extends State<ToDoBox> {
             borderRadius: BorderRadius.circular(10.0),
             color: Colors.white.withOpacity(0.5)),
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 18, horizontal: 28),
           child: StreamBuilder(
             stream: testFire.snapshots(),
             builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
@@ -43,9 +42,6 @@ class _ToDoBoxState extends State<ToDoBox> {
                       if (newIndex > oldIndex) {
                         newIndex -= 1;
                       }
-                      // https://www.youtube.com/watch?v=ivjYPsFAmPo
-                      // 파이어스토어 위 영상 보며, 테이블 불러오는거 까지만 함
-                      // 새로 키면, Provider가 아닌 파이어스토어에서 데이터 가공하는 거로 변환하기
                       final moveTodo = _todosProvider.todos.removeAt(oldIndex);
                       _todosProvider.todos.insert(newIndex, moveTodo);
                     });
@@ -69,8 +65,8 @@ class _ToDoBoxState extends State<ToDoBox> {
                                   _todosProvider.todos.removeAt(index);
                                   _todosProvider.notifyListeners();
                                 },
-                                icon: Icon(Icons.highlight_off,
-                                    color: Colors.black),
+                                icon: Icon(
+                                    Icons.highlight_off, color: Colors.black),
                               ),
                               Text('$todo', style: TextStyle(fontSize: 18)),
                             ],
@@ -83,11 +79,11 @@ class _ToDoBoxState extends State<ToDoBox> {
                       ),
                     );
                   }).toList(),
-                );
+                )
               }
-              return CircularProgressIndicator();
-            },
-          ),
+            },),
+          margin: EdgeInsets.symmetric(vertical: 18, horizontal: 28),
+
         ));
   }
 }

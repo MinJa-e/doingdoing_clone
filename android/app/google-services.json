@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "738800003717",
+    "project_id": "doingdoing-clone",
+    "storage_bucket": "doingdoing-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738800003717:android:1e17e3b7bf7908900a57ec",
+        "android_client_info": {
+          "package_name": "com.clone.doingdoing.doingdoing_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738800003717-1eq6jk9vdvqlcro40j2euboo3p7ut3kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKO2CE-BiDPc0lZsTopuY9-RMbmvnkuf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738800003717-1eq6jk9vdvqlcro40j2euboo3p7ut3kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doingdoing_clone/widget/DateSelect.dart';
 import 'package:doingdoing_clone/widget/Label.dart';
 import 'package:doingdoing_clone/widget/ToDoBox.dart';
@@ -16,7 +17,7 @@ class WriteScreen extends StatefulWidget {
 }
 
 class _WriteScreenState extends State<WriteScreen> {
-  List _todos = [];
+  CollectionReference testFire = FirebaseFirestore.instance.collection('todos');
 
   @override
   Widget build(BuildContext context) {
